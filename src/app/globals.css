@@ -2,20 +2,174 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #f1f1e6;
 }
 
-@media (prefers-color-scheme: dark) {
+@layer base {
+  /* :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 3.9%;
+    --primary: 0 0% 9%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 0 0% 96.1%;
+    --secondary-foreground: 0 0% 9%;
+    --muted: 0 0% 96.1%;
+    --muted-foreground: 0 0% 45.1%;
+    --accent: 0 0% 96.1%;
+    --accent-foreground: 0 0% 9%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 89.8%;
+    --input: 0 0% 89.8%;
+    --ring: 0 0% 3.9%;
+    --chart-1: 12 76% 61%;
+    --chart-2: 173 58% 39%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+    --radius: 0.5rem;
+  } */
+
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --secondary-green: #38916d;
+    --light-green: #1db954;
+    --blacker-green: #0d4749;
+    --hover-color: #fff;
+    --active: #ffffff80;
+    --main-green: #136c60;
+    --black-green: #324b4c;
+    --background-color: #f1f1e6;
+    --line-height: 28px;
+    --white\<deleted\|variable-7ae1ff2d\>: white;
+    --black-fade\<deleted\|variable-7b1bfa00\>: #33333380;
+    --blue-fade\<deleted\|variable-c9977eb1\>: #507cae1a;
+    --button-blue\<deleted\|variable-6edb2f6b\>: #507cae;
+    --card-color: #00000005;
+    --deep-sky-blue\<deleted\|variable-8167aa54\>: #009dc7;
+    --black\<deleted\|variable-f4b7b183\>: #333;
+    --tablet-size: 24px;
+    --mobile-line-height: 18px;
+  }
+  .dark {
+    --background: 0 0% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 0 0% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 0 0% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 0 0% 9%;
+    --secondary: 0 0% 14.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 0 0% 14.9%;
+    --muted-foreground: 0 0% 63.9%;
+    --accent: 0 0% 14.9%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 14.9%;
+    --input: 0 0% 14.9%;
+    --ring: 0 0% 83.1%;
+    --chart-1: 220 70% 50%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
   }
 }
 
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+.sbar {
+  overflow-y: auto;
+  padding-right: 10px;
+}
+/* For WebKit browsers (Chrome, Safari, and the new Edge) */
+.sbar::-webkit-scrollbar {
+  width: 2px; /* Width of the scrollbar */
+}
+
+.sbar::-webkit-scrollbar-track {
+  width: 2px;
+  background: #f1f1f1; /* Background of the scrollbar track */
+}
+
+.sbar::-webkit-scrollbar-thumb {
+  background-color: #888; /* Color of the scrollbar thumb */
+  border-radius: 10px; /* Roundness of the scrollbar thumb */
+  /*border: 1px solid #f1f1f1; */ /* Padding around the thumb */
+}
+
+.sbar::-webkit-scrollbar-thumb:hover {
+  background: #555; /* Color of the scrollbar thumb on hover */
+}
+
+/* For Firefox */
+/* .sbar {
+	scrollbar-width: thin; 
+	scrollbar-color: #888 #f1f1f1; 
+} */
+
+/* CustomCursor.module.css */
+.cursor-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none; /* Prevents interactions with the cursor */
+  z-index: 10000;
+}
+
+/* .cursor {
+  position: absolute;
+  width: 50px; 
+  height: 50px;
+  transform: translate(0, 0);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+} */
+
+.cursorImage {
+  width: 100%;
+  height: 100%;
+}
+
+.cursor {
+  position: absolute;
+  width: 50px; /* Adjust cursor size */
+  height: 50px;
+  transform: translate(0, 0); /* Center cursor on pointer */
+  transition: opacity 0.2s ease, transform 0.2s ease; /* Smooth opacity and movement */
+  opacity: 0; /* Hidden by default */
+}
+
+* {
+  cursor: none !important;
+}
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  cursor: none !important; /* Hide the default cursor */
+}
+body:hover .cursor-wrapper {
+  opacity: 1;
+}
+
+a:hover .cursor {
+  transform: scale(1.2); /* Make the cursor larger on hover */
+}
+
+Link .cursor {
+  transform: scale(1.2);
 }

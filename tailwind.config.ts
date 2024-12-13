@@ -2,6 +2,7 @@ import type { Config } from "tailwindcss";
 import tailwindcssAnimate from "tailwindcss-animate";
 
 export default {
+  darkMode: ["class"],
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
@@ -10,17 +11,63 @@ export default {
   theme: {
     extend: {
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+        background: "hsl(var(--background))",
+        foreground: "hsl(var(--foreground))",
+        card: {
+          DEFAULT: "hsl(var(--card))",
+          foreground: "hsl(var(--card-foreground))",
+        },
+        popover: {
+          DEFAULT: "hsl(var(--popover))",
+          foreground: "hsl(var(--popover-foreground))",
+        },
+        primary: {
+          DEFAULT: "hsl(var(--primary))",
+          foreground: "hsl(var(--primary-foreground))",
+        },
+        secondary: {
+          DEFAULT: "hsl(var(--secondary))",
+          foreground: "hsl(var(--secondary-foreground))",
+        },
+        muted: {
+          DEFAULT: "hsl(var(--muted))",
+          foreground: "hsl(var(--muted-foreground))",
+        },
+        accent: {
+          DEFAULT: "hsl(var(--accent))",
+          foreground: "hsl(var(--accent-foreground))",
+        },
+        destructive: {
+          DEFAULT: "hsl(var(--destructive))",
+          foreground: "hsl(var(--destructive-foreground))",
+        },
+        border: "hsl(var(--border))",
+        input: "hsl(var(--input))",
+        ring: "hsl(var(--ring))",
+        chart: {
+          "1": "hsl(var(--chart-1))",
+          "2": "hsl(var(--chart-2))",
+          "3": "hsl(var(--chart-3))",
+          "4": "hsl(var(--chart-4))",
+          "5": "hsl(var(--chart-5))",
+        },
       },
       keyframes: {
         "accordion-down": {
-          from: { height: "0" },
-          to: { height: "var(--radix-accordion-content-height)" },
+          from: {
+            height: "0",
+          },
+          to: {
+            height: "var(--radix-accordion-content-height)",
+          },
         },
         "accordion-up": {
-          from: { height: "var(--radix-accordion-content-height)" },
-          to: { height: "0" },
+          from: {
+            height: "var(--radix-accordion-content-height)",
+          },
+          to: {
+            height: "0",
+          },
         },
         "slide-down": {
           from: {
@@ -39,16 +86,32 @@ export default {
           },
         },
         fadeInUp: {
-          "0%": { opacity: "0", transform: "translateY(50%)" },
-          "100%": { opacity: "1", transform: "translateY(0)" },
+          "0%": {
+            opacity: "0",
+            transform: "translateY(50%)",
+          },
+          "100%": {
+            opacity: "1",
+            transform: "translateY(0)",
+          },
         },
         fadeOutDown: {
-          "0%": { opacity: "1", transform: "translateY(0)" },
-          "100%": { opacity: "0", transform: "translateY(50%)" },
+          "0%": {
+            opacity: "1",
+            transform: "translateY(0)",
+          },
+          "100%": {
+            opacity: "0",
+            transform: "translateY(50%)",
+          },
         },
         loadingBar: {
-          "0%": { width: "0%" },
-          "100%": { width: "100%" },
+          "0%": {
+            width: "0%",
+          },
+          "100%": {
+            width: "100%",
+          },
         },
       },
       animation: {
@@ -61,21 +124,26 @@ export default {
         loadingBar: "loadingBar 2s linear ",
       },
       animationDuration: {
-        10: "100ms", // Custom duration class
-        50: "500ms",
-        100: "1000ms", // Custom duration class
-        150: "1500ms", // Custom duration class
-        200: "2000ms", // Custom duration class
-        300: "3000ms", // Custom duration class
-        350: "3500ms", // Custom duration class
-        400: "4000ms",
+        "10": "100ms",
+        "50": "500ms",
+        "100": "1000ms",
+        "150": "1500ms",
+        "200": "2000ms",
+        "300": "3000ms",
+        "350": "3500ms",
+        "400": "4000ms",
       },
       animationDelay: {
-        300: "300ms", // Custom delay class
-        500: "500ms", // Custom delay class
-        1000: "1000ms",
-        1500: "1500ms",
-        2000: "2000ms", // Custom delay class
+        "300": "300ms",
+        "500": "500ms",
+        "1000": "1000ms",
+        "1500": "1500ms",
+        "2000": "2000ms",
+      },
+      borderRadius: {
+        lg: "var(--radius)",
+        md: "calc(var(--radius) - 2px)",
+        sm: "calc(var(--radius) - 4px)",
       },
     },
   },
