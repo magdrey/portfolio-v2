@@ -95,6 +95,16 @@ export default {
             transform: "translateY(0)",
           },
         },
+        fadeInDown: {
+          "0%": {
+            opacity: "0",
+            transform: "translateY(-250%)",
+          },
+          "100%": {
+            opacity: "1",
+            transform: "translateY(0)",
+          },
+        },
         fadeOutDown: {
           "0%": {
             opacity: "1",
@@ -113,6 +123,14 @@ export default {
             width: "100%",
           },
         },
+        fadeInLeft: {
+          "0%": { opacity: "0", transform: "translateX(-250%)" },
+          "100%": { opacity: "1", transform: "translateX(0)" },
+        },
+        fadeOutLeft: {
+          "0%": { opacity: "1", transform: "translateX(0)" },
+          "100%": { opacity: "0", transform: "translateX(-250px)" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -120,8 +138,11 @@ export default {
         "slide-down": "slide-down 0.5s ease-out",
         "slide-up": "slide-up 0.5s ease-out",
         fadeInUp: "fadeInUp 2s ease-out forwards",
+        fadeInDown: "fadeInDown 2s ease-out forwards",
         fadeOutDown: "fadeOutDown 2s ease-out forwards",
         loadingBar: "loadingBar 2s linear ",
+        fadeInLeft: "fadeInLeft 2s ease-out forwards",
+        fadeOutLeft: "fadeOutLeft 2s ease-out forwards",
       },
       animationDuration: {
         "10": "100ms",
@@ -139,6 +160,10 @@ export default {
         "1000": "1000ms",
         "1500": "1500ms",
         "2000": "2000ms",
+        "2500": "2500ms",
+        "3000": "3000ms",
+        "3500": "3500ms",
+        "4000": "4000ms",
       },
       borderRadius: {
         lg: "var(--radius)",

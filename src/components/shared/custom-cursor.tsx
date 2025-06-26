@@ -1,6 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 "use client";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 export function CustomCursor() {
   // useEffect(() => {
@@ -60,6 +60,16 @@ export function CustomCursor() {
     };
   }, []);
 
+  const [isTouch, setIsTouch] = useState(false);
+
+  useEffect(() => {
+    const isTouchDevice = () =>
+      "ontouchstart" in window || navigator.maxTouchPoints > 0;
+
+    setIsTouch(isTouchDevice());
+  }, []);
+
+  if (isTouch) return null;
   return (
     <div className="cursor-wrapper">
       <div className="cursor">
