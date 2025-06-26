@@ -21,7 +21,7 @@ export default function Project() {
   return (
     <Loading loadingTitle1={project.name} loadingTitle2={project.subtitle}>
       <div className=" text-[#002628] w-screen flex flex-col items-center justify-center">
-        <header className="w-full flex flex-col px-10 items-center lg:h-screen max-w-[1100px]">
+        <header className="w-full flex flex-col md:px-10 items-center lg:h-screen max-w-[1100px]">
           <NavBar />
           <div className="flex flex-col gap-10 pt-10 justify-center h-full ">
             <div className="flex flex-col items-center gap-5">
@@ -39,8 +39,8 @@ export default function Project() {
                 />{" "}
               </div>
 
-              <div className="flex pt-[20px] flex-col">
-                <p className="animate-fadeInUp opacity-0  text-[18px] text-[#0d4749] font-bold  duration-500 ">
+              <div className="flex pt-[20px] px-4 flex-col">
+                <p className="animate-fadeInUp text-center opacity-0  text-[18px] text-[#0d4749] font-bold  duration-500 ">
                   {project.details}
                 </p>
               </div>
@@ -108,7 +108,7 @@ export default function Project() {
               {/* {project.techStack?.join(", ")} */}
               {project.techStack?.map((stack, index) => (
                 <p
-                  className=" group relative m-[5px] bg-green-100 border-2 border-green-800 px-2 py-1  flex items-center gap-4 rounded-[5px] "
+                  className=" group relative m-[5px] bg-green-50/70 border-2 border-green-600 px-2 py-1  flex items-center gap-4 rounded-[5px] "
                   key={index}
                 >
                   {stack}
