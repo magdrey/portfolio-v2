@@ -64,24 +64,6 @@ export const NavBar = () => {
   };
 
   return (
-    // <nav className="flex justify-between gap-[16px] h-[100px] items-center">
-    //   {navLink.map((link) => (
-    //     <div
-    //       className={` ${pathname === link.link ? "bg-white" : ""} ${
-    //         link.class
-    //       }  flex justify-center rounded-[24px] text-[14px] opacity-0 hover:bg-white hover:text-[#136c60] font-[600] text-[#0d4749] items-center px-[30px] py-[15px]`}
-    //       onClick={
-    //         link.download
-    //           ? () => handleDownload(link.link)
-    //           : () => handleselectDashboard(link.link)
-    //       }
-    //       key={link.name}
-    //     >
-    //       <span> {link.name} </span>
-    //     </div>
-    //   ))}
-    // </nav>
-
     <nav className=" flex w-full   justify-between items-center h-[100px] md:justify-start ">
       {/* Desktop Nav */}
       <div className="hidden w-full  md:flex justify-center  gap-[16px]">
@@ -104,7 +86,7 @@ export const NavBar = () => {
 
       {/* Mobile Menu Button */}
 
-      <button onClick={toggleMenu} className="md:hidden ml-6  z-[1001]">
+      <button onClick={toggleMenu} className="md:hidden ml-6 mt-6  z-[1001]">
         {isOpen ? <X size={28} /> : <Menu size={28} />}
       </button>
 

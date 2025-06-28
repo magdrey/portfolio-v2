@@ -68,9 +68,10 @@ export default function Project() {
                   href={project?.liveUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-blue-500 hover:underline"
+                  className="text-green-600 hover:text-blue-800 flex items-center  hover:underline"
                 >
-                  <ExternalLinkIcon className="w-4 h-4 hover:w-5 hover:h-5 text-green-600 hover:text-blue-800" />
+                  <span className="  ">link to website</span>
+                  <ExternalLinkIcon className="w-4 h-4 hover:w-5 hover:h-5" />
                 </a>
               )}
             </p>
@@ -101,11 +102,10 @@ export default function Project() {
           </div>
         </section>
 
-        <section className="flex w-full mb-2 items-center flex-col max-w-[1100px]">
+        <section className="flex w-full my-2 items-center flex-col max-w-[1100px]">
           <div className="grid w-full mx-auto grid-cols-5 max-w-[1000px] px-8">
             <p className="font-semibold hidden lg:flex"> Tech Stack :</p>
-            <div className="animate-fadeInUp opacity-0 flex  col-span-4 text-[14px]  font-medium  duration-500 ">
-              {/* {project.techStack?.join(", ")} */}
+            <div className="animate-fadeInUp opacity-0 flex col-span-5 lg:col-span-4 text-[14px] justify-center lg:justify-start  font-medium  duration-500 ">
               {project.techStack?.map((stack, index) => (
                 <p
                   className=" group relative m-[5px] bg-green-50/70 border-2 border-green-600 px-2 py-1  flex items-center gap-4 rounded-[5px] "
@@ -131,24 +131,6 @@ export default function Project() {
             )}
           </div>
         </section>
-
-        {/* <section className="flex w-full mb-2 mt-8 items-center flex-col max-w-[1100px]">
-          {" "}
-          <div className="grid w-full mx-auto grid-cols-5 max-w-[1000px] px-8">
-            <p className="font-semibold"> Tags :</p>
-
-            <div className="animate-fadeInUp opacity-0 flex  col-span-4 text-[14px]  font-medium  duration-500 ">
-              {project.tags?.map((tag, index) => (
-                <p
-                  className=" group relative m-[5px] bg-green-100 border-2 border-green-800 px-2 py-1  flex items-center gap-4 rounded-[5px] "
-                  key={index}
-                >
-                  {tag}
-                </p>
-              ))}
-            </div>
-          </div>{" "}
-        </section> */}
 
         <section
           id="Contact"
