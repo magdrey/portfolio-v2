@@ -11,7 +11,7 @@ export const NavBar = () => {
     {
       name: "My Portfolio",
       link: "/",
-      class: " delay-500 md:delay-1500 duration-1000",
+      class: " md:delay-1500 duration-1000",
       download: false,
     },
     // {
@@ -28,7 +28,7 @@ export const NavBar = () => {
     {
       name: "Contact Me",
       link: "#Contact",
-      class: " delay-1000 md:delay-2000 duration-1000",
+      class: " delay-500 md:delay-2000 duration-1000",
     },
   ];
 
@@ -54,13 +54,13 @@ export const NavBar = () => {
       setIsOpen(true);
     } else {
       setIsOpen(false); // Trigger fade out
-      setTimeout(() => setShouldRender(false), 2000); // Wait for animation to finish
+      setTimeout(() => setShouldRender(false), 1000); // Wait for animation to finish
     }
   };
 
   const closeMenu = () => {
     setIsOpen(false);
-    setTimeout(() => setShouldRender(false), 2000); // Delay unmount
+    setTimeout(() => setShouldRender(false), 1000); // Delay unmount
   };
 
   return (
